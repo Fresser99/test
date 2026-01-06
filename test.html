@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滚动固定效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .section-1 {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .section-2 {
+            height: 100vh;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            position: sticky;
+            top: 0; /* 到达顶部时固定 */
+        }
+
+        /* 如果想在视口中心固定，使用这个 */
+        .section-2-center {
+            position: sticky;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .spacer {
+            height: 200vh; /* 额外空间用于展示固定效果 */
+            background: #f0f0f0;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <section class="section-1">
+        <h1>Section 1 - 会正常滚动上去</h1>
+    </section>
+
+    <section class="section-2">
+        <h1>Section 2 - 到达顶部时固定</h1>
+    </section>
+
+    <div class="spacer">
+        <p>继续滚动查看固定效果...</p>
+    </div>
+</body>
+</html>
